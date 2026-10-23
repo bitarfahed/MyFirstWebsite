@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>האתר המודולרי שלי</title>
+    <!-- חיבור לקובץ העיצוב -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>ברוכים הבאים לאתר המודולרי שלי!</h1>
+
+    <section>
+        <h2>חלק 1: משפטים עם צבעים</h2>
+        <p class="red-sentence">המשפט הזה הוא אדום מבית CSS.</p>
+        <p class="green-sentence">המשפט הזה הוא ירוק מבית CSS.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>חלק 2: משפטים זזים ואינטראקטיביות</h2>
+        <p class="moving-sentence">אני משפט שזז בעזרת אנימציית CSS!</p>
+        
+        <!-- כפתור שמפעיל את הפונקציה מתוך קובץ ה-JS -->
+        <button onclick="changeTextAction()">לחץ עלי כדי לשנות אותי!</button>
+        <p id="action-output">הטקסט הזה יושפע מה-JS.</p>
+    </section>
+
+    <!-- חיבור לקובץ הלוגיקה (נמצא ממש בסוף גוף העמוד) -->
+    <script src="script.js"></script>
+</body>
+</html>

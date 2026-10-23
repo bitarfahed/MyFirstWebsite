@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.red-sentence {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.green-sentence {
+    color: green;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.moving-sentence {
+    position: relative;
+    animation: moveText 3s infinite alternate;
+}
+
+@keyframes moveText {
+    from { left: -100px; }
+    to { left: 100px; }
+}
