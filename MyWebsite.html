@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <title>האתר הראשון שלי - סנכרון שפות</title>
@@ -32,16 +33,23 @@
         /* הגדרה למשפט שזז (אנימציית CSS פשוטה) */
         .moving-sentence {
             position: relative;
-            animation: moveText 3s infinite alternate; /* מפעיל אנימציה שנקראת moveText למשך 3 שניות */
+            animation: moveText 3s infinite alternate;
+            /* מפעיל אנימציה שנקראת moveText למשך 3 שניות */
         }
 
         /* הגדרת התנועה של האנימציה */
         @keyframes moveText {
-            from { left: -100px; }
-            to { left: 100px; }
+            from {
+                left: -100px;
+            }
+
+            to {
+                left: 100px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ========================================== -->
@@ -63,7 +71,7 @@
     <section>
         <h2>חלק 2: משפטים זזים ואינטראקטיביות</h2>
         <p class="moving-sentence">אני משפט שזז ימינה ושמאלה בעזרת CSS ו-JS!</p>
-        
+
         <!-- כפתור שיפעיל פעולה של JavaScript -->
         <button onclick="changeTextAction()">לחץ עלי כדי לשנות אותי!</button>
         <p id="action-output">הטקסט הזה יושפע מה-JS שתפעיל.</p>
@@ -76,12 +84,21 @@
     <script>
         // פונקציה זו רצה רק כאשר המשתמש לוחץ על הכפתור למעלה
         function changeTextAction() {
-            // ה-JS פונה ל-HTML, מוצא את האלמנט לפי ה-ID שלו, ומשנה את התוכן שלו!
             let element = document.getElementById("action-output");
-            element.innerHTML = "כל הכבוד! ה-JavaScript שינה את הטקסט הזה בהצלחה!";
-            element.style.color = "blue"; // ה-JS יכול לשנות גם עיצוב תוך כדי תנועה!
+
+            // בודקים האם הצבע הנוכחי הוא כבר כחול (כלומר, האם המצב המשתנה כבר הופעל)
+            if (element.style.color === "blue") {
+                // אם כן - מחזירים חזרה למצב המקורי
+                element.innerHTML = "הטקסט הזה יושפע מה-JS שתפעיל.";
+                element.style.color = "black";
+            } else {
+                // אם לא - משנים למצב החדש
+                element.innerHTML = "כל הכבוד! ה-JavaScript שינה את הטקסט הזה בהצלחה!";
+                element.style.color = "blue";
+            }
         }
     </script>
 
 </body>
+
 </html>

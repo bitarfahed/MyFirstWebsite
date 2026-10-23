@@ -1,0 +1,13 @@
+### How HTML, CSS, and JS Work Together
+
+**1. How HTML and CSS connect:**
+
+* We connect CSS to HTML inside the `<head>` section of the HTML file using a `<link>` tag (for example: `<link rel="stylesheet" href="style.css">`).
+* This tells the browser: *"Look at this CSS file and apply its styles to my HTML elements."*
+* The CSS knows which element to style by using **Classes** or **IDs** (for example, a class named `red-text` tells the CSS to make a specific sentence red).
+
+**2. Where JavaScript (JS) comes in:**
+
+* JavaScript is added to handle **actions and interactivity** (like moving text, pop-ups, or changing things when a user clicks a button).
+* It is usually connected near the bottom of the HTML file using a `<script>` tag.
+* JS can actually reach inside the HTML, find specific elements, and change their text, color, or behavior dynamically while the user is looking at the page.
