@@ -1,3 +1,5 @@
+#Note 1
+
 ### How HTML, CSS, and JS Work Together
 
 **1. How HTML and CSS connect:**
@@ -11,3 +13,37 @@
 * JavaScript is added to handle **actions and interactivity** (like moving text, pop-ups, or changing things when a user clicks a button).
 * It is usually connected near the bottom of the HTML file using a `<script>` tag.
 * JS can actually reach inside the HTML, find specific elements, and change their text, color, or behavior dynamically while the user is looking at the page.
+
+
+
+#Note 2
+
+### How to Split Your Project into 3 Separate Files and Connect Them
+
+**Step 1: Create the 3 files**
+Create three separate files inside the same folder on your computer:
+
+1. `index.html` (for structure and content)
+2. `style.css` (for design and styling)
+3. `script.js` (for actions and logic)
+
+**Step 2: Connect them together**
+
+* **Connect CSS to HTML:**
+ Inside the `<head>` section of your HTML file, add a link tag pointing to your CSS file:
+```html
+<link rel="stylesheet" href="style.css">
+
+```
+
+* **Connect JS to HTML:** 
+Right before the closing `</body>` tag at the bottom of your HTML file, add a script tag pointing to your JS file:
+```html
+<script src="script.js"></script>
+
+```
+
+
+* *Tip:* Always open the `index.html` file in your browser to view your website. The browser will automatically load the connected CSS and JS files.
+
+---

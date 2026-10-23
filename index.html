@@ -2,32 +2,67 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>האתר המודולרי שלי</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ניהול אנשים</title>
     <!-- חיבור לקובץ העיצוב -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>ברוכים הבאים לאתר המודולרי שלי!</h1>
+    <div class="container">
+        <h1>מערכת ניהול אנשים</h1>
 
-    <section>
-        <h2>חלק 1: משפטים עם צבעים</h2>
-        <p class="red-sentence">המשפט הזה הוא אדום מבית CSS.</p>
-        <p class="green-sentence">המשפט הזה הוא ירוק מבית CSS.</p>
-    </section>
+        <!-- סרגל כפתורים ראשי -->
+        <div class="actions-bar">
+            <button id="toggle-list-btn" onclick="togglePeopleList()">Show</button>
+            <button id="show-form-btn" onclick="showAddForm()">Add</button>
+        </div>
 
-    <hr>
+        <!-- טופס הוספת אדם חדש (מוסתר כברירת מחדל) -->
+        <div id="add-form-container" class="form-container hidden">
+            <h2>הוספת אדם חדש</h2>
+            
+            <div class="form-group">
+                <label for="person-name">שם פרטי (אותיות בלבד):</label>
+                <input type="text" id="person-name" placeholder="הכנס שם...">
+            </div>
 
-    <section>
-        <h2>חלק 2: משפטים זזים ואינטראקטיביות</h2>
-        <p class="moving-sentence">אני משפט שזז בעזרת אנימציית CSS!</p>
-        
-        <!-- כפתור שמפעיל את הפונקציה מתוך קובץ ה-JS -->
-        <button onclick="changeTextAction()">לחץ עלי כדי לשנות אותי!</button>
-        <p id="action-output">הטקסט הזה יושפע מה-JS.</p>
-    </section>
+            <div class="form-group">
+                <label for="person-age">גיל (0-100):</label>
+                <input type="number" id="person-age" min="0" max="100" placeholder="הכנס גיל...">
+            </div>
 
-    <!-- חיבור לקובץ הלוגיקה (נמצא ממש בסוף גוף העמוד) -->
+            <div class="form-group">
+                <label>מין:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="זכר" checked> זכר</label>
+                    <label><input type="radio" name="gender" value="נקבה"> נקבה</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="person-country">מדינה:</label>
+                <select id="person-country">
+                    <option value="Israel">ישראל (Israel)</option>
+                    <option value="US">ארצות הברית (US)</option>
+                    <option value="UK">בריטניה (UK)</option>
+                </select>
+            </div>
+
+            <div class="form-buttons">
+                <button class="send-btn" onclick="sendNewPerson()">Send</button>
+                <button class="cancel-btn" onclick="hideAddForm()">ביטול</button>
+            </div>
+        </div>
+
+        <!-- אזור הצגת רשימת האנשים (מוסתר כברירת מחדל) -->
+        <div id="people-list-container" class="list-container hidden">
+            <h2>רשימת אנשים במערכת</h2>
+            <div id="people-list"></div>
+        </div>
+    </div>
+
+    <!-- חיבור לקובץ ה-JavaScript בסוף ה-body -->
     <script src="script.js"></script>
 </body>
 </html>

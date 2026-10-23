@@ -1,27 +1,137 @@
+/* הגדרות כלליות */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
     text-align: center;
-    margin-top: 50px;
+    color: #333;
 }
 
-.red-sentence {
-    color: red;
-    font-size: 24px;
+/* סרגל כפתורים */
+.actions-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#toggle-list-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+#show-form-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+/* המחלקה שמחביאה אלמנטים מהמסך */
+.hidden {
+    display: none !important;
+}
+
+/* עיצוב הטופס */
+.form-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-.green-sentence {
-    color: green;
-    font-size: 24px;
-    font-weight: bold;
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-.moving-sentence {
-    position: relative;
-    animation: moveText 3s infinite alternate;
+.radio-group {
+    display: flex;
+    gap: 15px;
 }
 
-@keyframes moveText {
-    from { left: -100px; }
-    to { left: 100px; }
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.send-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* עיצוב רשימת האנשים וכרטיסיות */
+.list-container {
+    margin-top: 20px;
+}
+
+.person-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.person-info {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* כפתור מחיקה פרטי לכל אדם */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
 }
