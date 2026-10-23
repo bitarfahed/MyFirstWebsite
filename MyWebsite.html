@@ -2,49 +2,86 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>דוגמה לטבלה עם גבולות</title>
+    <title>האתר הראשון שלי - סנכרון שפות</title>
+
+    <!-- ========================================== -->
+    <!-- כאן מתחיל עולם ה-CSS (העיצוב והצבעים)      -->
+    <!-- ========================================== -->
     <style>
-        /* עיצוב הטבלה, כותרות והתאים */
-        table, th, td {
-            border: 1px solid black; /* קו שחור עדין בעובי פיקסל אחד */
-            border-collapse: collapse; /* מאחד את הקווים הכפולים לקו יחיד */
-        }
-        
-        /* הוספת רווח פנימי כדי שהטקסט לא ייצמד לקווים */
-        th, td {
-            padding: 10px;
-            text-align: right;
+        /* עיצוב כללי לעמוד */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
         }
 
-        /* צבע רקע אופציונלי לשורת הכותרת */
-        th {
-            background-color: #f2f2f2;
+        /* הגדרת צבע אדום למשפט הראשון בעזרת המחלקה שלהם */
+        .red-sentence {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* הגדרת צבע ירוק למשפט השני */
+        .green-sentence {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* הגדרה למשפט שזז (אנימציית CSS פשוטה) */
+        .moving-sentence {
+            position: relative;
+            animation: moveText 3s infinite alternate; /* מפעיל אנימציה שנקראת moveText למשך 3 שניות */
+        }
+
+        /* הגדרת התנועה של האנימציה */
+        @keyframes moveText {
+            from { left: -100px; }
+            to { left: 100px; }
         }
     </style>
 </head>
 <body>
 
-    <table>
-        <thead>
-            <tr>
-                <th>שם פרטי</th>
-                <th>שם משפחה</th>
-                <th>גיל</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>ישראל</td>
-                <td>ישראלי</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>דנה</td>
-                <td>לוי</td>
-                <td>25</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- ========================================== -->
+    <!-- כאן מתחיל עולם ה-HTML (השלד והתוכן)        -->
+    <!-- ========================================== -->
+
+    <h1>ברוכים הבאים לאתר הלימוד שלי!</h1>
+
+    <!-- חלק א': משפטים צבעוניים (מקושרים ל-CSS דרך ה-class) -->
+    <section>
+        <h2>חלק 1: משפטים עם צבעים</h2>
+        <p class="red-sentence">המשפט הזה הוא אדום כי קיבל עיצוב מ-CSS.</p>
+        <p class="green-sentence">המשפט הזה הוא ירוק לפי הגדרת ה-CSS.</p>
+    </section>
+
+    <hr>
+
+    <!-- חלק ב': משפט זז ופעולות -->
+    <section>
+        <h2>חלק 2: משפטים זזים ואינטראקטיביות</h2>
+        <p class="moving-sentence">אני משפט שזז ימינה ושמאלה בעזרת CSS ו-JS!</p>
+        
+        <!-- כפתור שיפעיל פעולה של JavaScript -->
+        <button onclick="changeTextAction()">לחץ עלי כדי לשנות אותי!</button>
+        <p id="action-output">הטקסט הזה יושפע מה-JS שתפעיל.</p>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- כאן מתחיל עולם ה-JS (הפעולה והאינטראקטיביות) -->
+    <!-- ========================================== -->
+    <script>
+        // פונקציה זו רצה רק כאשר המשתמש לוחץ על הכפתור למעלה
+        function changeTextAction() {
+            // ה-JS פונה ל-HTML, מוצא את האלמנט לפי ה-ID שלו, ומשנה את התוכן שלו!
+            let element = document.getElementById("action-output");
+            element.innerHTML = "כל הכבוד! ה-JavaScript שינה את הטקסט הזה בהצלחה!";
+            element.style.color = "blue"; // ה-JS יכול לשנות גם עיצוב תוך כדי תנועה!
+        }
+    </script>
 
 </body>
 </html>
