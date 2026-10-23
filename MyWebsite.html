@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>דוגמה לטבלה עם גבולות</title>
+    <style>
+        /* עיצוב הטבלה, כותרות והתאים */
+        table, th, td {
+            border: 1px solid black; /* קו שחור עדין בעובי פיקסל אחד */
+            border-collapse: collapse; /* מאחד את הקווים הכפולים לקו יחיד */
+        }
+        
+        /* הוספת רווח פנימי כדי שהטקסט לא ייצמד לקווים */
+        th, td {
+            padding: 10px;
+            text-align: right;
+        }
+
+        /* צבע רקע אופציונלי לשורת הכותרת */
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>שם פרטי</th>
+                <th>שם משפחה</th>
+                <th>גיל</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ישראל</td>
+                <td>ישראלי</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>דנה</td>
+                <td>לוי</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
