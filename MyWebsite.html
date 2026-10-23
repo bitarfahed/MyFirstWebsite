@@ -83,18 +83,27 @@
     <!-- ========================================== -->
     <script>
         // פונקציה זו רצה רק כאשר המשתמש לוחץ על הכפתור למעלה
+        // יוצרים משתנה גלובלי או חיצוני שישמור את המצב הנוכחי (התחלתי = false, משוכלל = true)
+        let isChanged = false;
+
         function changeTextAction() {
             let element = document.getElementById("action-output");
 
-            // בודקים האם הצבע הנוכחי הוא כבר כחול (כלומר, האם המצב המשתנה כבר הופעל)
-            if (element.style.color === "blue") {
-                // אם כן - מחזירים חזרה למצב המקורי
-                element.innerHTML = "הטקסט הזה יושפע מה-JS שתפעיל.";
-                element.style.color = "black";
-            } else {
-                // אם לא - משנים למצב החדש
+            // בודקים את המזהה/מצב שלנו במקום להסתמך על צבע
+            if (isChanged === false) {
+                // מצב ראשון: משנים לטקסט ולצבע החדשים
                 element.innerHTML = "כל הכבוד! ה-JavaScript שינה את הטקסט הזה בהצלחה!";
                 element.style.color = "blue";
+
+                // מעדכנים את המצב ל-"שונה" לקראת הלחיצה הבאה
+                isChanged = true;
+            } else {
+                // מצב שני: מחזירים חזרה למצב המקורי
+                element.innerHTML = "הטקסט הזה יושפע מה-JS שתפעיל.";
+                element.style.color = "black";
+
+                // מעדכנים את המצב חזרה ל-"לא שונה"
+                isChanged = false;
             }
         }
     </script>
