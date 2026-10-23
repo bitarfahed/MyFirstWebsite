@@ -74,7 +74,8 @@
 
         <!-- כפתור שיפעיל פעולה של JavaScript -->
         <button onclick="changeTextAction()">לחץ עלי כדי לשנות אותי!</button>
-        <p id="action-output">הטקסט הזה יושפע מה-JS שתפעיל.</p>
+        <!-- <p id="action-output">הטקסט הזה יושפע מה-JS שתפעיל.</p> -->
+        <p id="action-output">not clicked yet.</p>
     </section>
 
 
@@ -100,7 +101,7 @@
             } else {
                 // מצב שני: מחזירים חזרה למצב המקורי
                 element.innerHTML = "הטקסט הזה יושפע מה-JS שתפעיל.";
-                element.style.color = "black";
+                element.style.color = "red";
 
                 // מעדכנים את המצב חזרה ל-"לא שונה"
                 isChanged = false;
